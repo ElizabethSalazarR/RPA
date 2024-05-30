@@ -1,0 +1,155 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InicializarVariables" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_UrlCnt" Type="OutArgument(x:String)" />
+    <x:Property Name="out_RutaArchivos" Type="OutArgument(x:String)" />
+    <x:Property Name="out_LibroCaptcha" Type="OutArgument(x:String)" />
+    <x:Property Name="out_CriterioBusqueda" Type="OutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1310,2205.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Inicializacion: Obtencion Assets y Storage Bucket" sap:VirtualizedContainerService.HintSize="512,2140.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="nombreBucket" />
+      <Variable x:TypeArguments="x:Boolean" Name="existeCarpeta" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message inicializar variables" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Inicializando proceso, obteniendo assets&quot;]" />
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="UrlCnt" CacheStrategy="None" DisplayName="Get Asset url cnt" FolderPath="Ejercicio" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[out_UrlCnt]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="RutaArchivos" CacheStrategy="None" DisplayName="Get Asset ruta Archivos" FolderPath="Ejercicio" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[out_RutaArchivos]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="ArchivoCaptcha" CacheStrategy="None" DisplayName="Get Asset archivo listado captcha" FolderPath="Ejercicio" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[out_LibroCaptcha]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:FolderExistsX DisplayName="Folder Exists ruta archivos excel" Exists="[existeCarpeta]" sap:VirtualizedContainerService.HintSize="450,168.66666666666666" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[out_RutaArchivos]" />
+    <If Condition="[existeCarpeta]" DisplayName="If existe carpeta archivos excel" sap:VirtualizedContainerService.HintSize="450,664.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="416,303.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DeleteFolderX DisplayName="Delete Folder archivos excel" sap:VirtualizedContainerService.HintSize="354,114" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[out_RutaArchivos]" Recursive="True" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder archivos excel luego de eliminar" sap:VirtualizedContainerService.HintSize="354,104.66666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[out_RutaArchivos]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="416,189.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder archivos excel" sap:VirtualizedContainerService.HintSize="354,104.66666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[out_RutaArchivos]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="NombreBucket" CacheStrategy="None" DisplayName="Get Asset nombre bucket storage" FolderPath="Ejercicio" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[nombreBucket]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="CriterioBusqueda" CacheStrategy="None" DisplayName="Get Asset Criterio Busqueda" FolderPath="Ejercicio" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_8">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[out_CriterioBusqueda]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ucas:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[out_RutaArchivos &amp; out_LibroCaptcha]" DisplayName="Download Storage File libro captcha" sap:VirtualizedContainerService.HintSize="450,159.33333333333334" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1" Path="[out_LibroCaptcha]" StorageBucketName="[nombreBucket]" />
+  </Sequence>
+</Activity>

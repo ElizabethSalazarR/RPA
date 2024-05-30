@@ -1,0 +1,182 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="EnviarCorreo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Correo" Type="InArgument(x:String)" />
+    <x:Property Name="in_SinContactos" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_CantidadContactos" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_RutaArchivos" Type="InArgument(x:String)" />
+    <x:Property Name="in_Apellido" Type="InArgument(x:String)" />
+    <x:Property Name="in_errorProceso" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_Provincia" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1310,1690</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="EnviarCorreoElectronico" sap:VirtualizedContainerService.HintSize="608,1625.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="usuarioCorreo" />
+      <Variable x:TypeArguments="ss:SecureString" Name="claveCorreo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Enviar Correo Electrónico" sap:VirtualizedContainerService.HintSize="546,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Enviando Correo Electrónico&quot;]" />
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Crd_correo" CacheStrategy="None" DisplayName="Get Credential credenciales correo" FolderPath="Ejercicio" sap:VirtualizedContainerService.HintSize="546,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[claveCorreo]" Username="[usuarioCorreo]" />
+    <If Condition="[in_errorProceso]" DisplayName="If Error en el Proceso" sap:VirtualizedContainerService.HintSize="546,1184" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="416,258" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="Se ha presentado un error en el proceso" DisplayName="Send SMTP Mail Message Error Proceso" Email="[usuarioCorreo]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,173.33333333333334" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Port="465" SecureConnection="Auto" SecurePassword="[claveCorreo]" Server="smtp.gmail.com" Subject="Error en el Proceso" To="[in_Correo]">
+            <ui:SendMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+            </ui:SendMail.Files>
+          </ui:SendMail>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="512,763.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If Condition="[in_SinContactos]" DisplayName="If sin contactos e la busqueda" sap:VirtualizedContainerService.HintSize="450,678.6666666666666" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="416,258" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Se notifica que el proceso ha culminado. No se encontraron contactos para la busqueda del Apellido: &quot; + in_Apellido + &quot; en la Provincia: &quot; + in_Provincia]" DisplayName="Send SMTP Mail Message notificacion sin contactos" Email="[usuarioCorreo]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,173.33333333333334" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" Port="465" SecureConnection="Auto" SecurePassword="[claveCorreo]" Server="smtp.gmail.com" Subject="NOTIFICACIÓN PROCESO" To="[in_Correo]">
+                  <ui:SendMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                  </ui:SendMail.Files>
+                </ui:SendMail>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="416,258" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Se notifica que el proceso ha culminado. Se encontraron &quot; + in_CantidadContactos.ToString + &quot; contactos para la busqueda del Apellido: &quot; + in_Apellido + &quot; en la Provincia: &quot; + in_Provincia]" DisplayName="Send SMTP Mail Message notificación adjunto" Email="[usuarioCorreo]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="354,173.33333333333334" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="False" Port="465" SecureConnection="Auto" SecurePassword="[claveCorreo]" Server="smtp.gmail.com" Subject="NOTIFICACIÓN PROCESO" To="[in_Correo]">
+                  <ui:SendMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                      <InArgument x:TypeArguments="x:String">[in_RutaArchivos + "Contactos"+in_Apellido+".xlsx"]</InArgument>
+                    </scg:List>
+                  </ui:SendMail.Files>
+                </ui:SendMail>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
